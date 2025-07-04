@@ -5,8 +5,10 @@ import org.springframework.data.annotation.Transient;
 import org.springframework.data.domain.Persistable;
 import org.springframework.lang.Nullable;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
 
 public class Customer implements Persistable<String> { 
     @Id public String customerId;
@@ -16,18 +18,20 @@ public class Customer implements Persistable<String> {
     public String workSector;
 
     @Transient 
-    @JsonIgnore
+   
     private boolean isNew = true;
 
     public Customer(){}
 
     @Override
     @Nullable
+    @JsonIgnore
     public String getId() {
         return customerId;
     }
 
     @Override
+    @JsonIgnore
     public boolean isNew() {
         return isNew;
     }
