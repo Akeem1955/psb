@@ -67,11 +67,11 @@ src/
 
 The RESTful API exposes the following endpoints for customer management:
 
-- `GET /api/customers` — List all customers
-- `GET /api/customers/{id}` — Get customer by ID
-- `POST /api/customers` — Create a new customer
-- `PUT /api/customers/{id}` — Update customer details
-- `DELETE /api/customers/{id}` — Delete a customer
+- `GET http://localhost:8080/psb/services/api/v1/search` — List all customers
+- `GET http://localhost:8080/psb/services/api/v1/search/{id}` — Get customer by ID
+- `POST http://localhost:8080/psb/services/api/v1/create` — Create a new customer
+- `PUT http://localhost:8080/psb/services/api/v1/update/{id}` — Update customer details
+- `DELETE http://localhost:8080/psb/services/api/v1/delete/{id}` — Delete a customer
 
 All API responses are in JSON format. Ensure that transactions from the web form are committed to the database.
 
