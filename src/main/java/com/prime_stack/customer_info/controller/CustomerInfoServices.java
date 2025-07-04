@@ -61,14 +61,14 @@ public class CustomerInfoServices {
 
 
     @PutMapping("/update")
-     ResponseEntity<String> updateById(Customer customer){
+     ResponseEntity<String> updateById(@RequestBody Customer customer){
 
         if (customer.customerId != null && repo.existsById(customer.customerId)) {
             customer.markAsNotNew();
             repo.save(customer);
             ResponseEntity.ok().body("Updated Succesfully...");
         }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Customer Info Not found...");
     }
 
     
