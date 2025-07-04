@@ -63,6 +63,13 @@ src/
 - Edit `src/main/resources/application.properties` for database and server settings.
 - The database schema is initialized from `schema.sql`.
 
+
+## Web App Customer Info
+
+- `GET http://localhost:8080/psb/customer_info` — Get The Frontend For Storing The Customer Information
+- `GET http://localhost:8080/psb/save_customer_info` — Saves Customer Information
+
+
 ## API Endpoints
 
 The RESTful API exposes the following endpoints for customer management:
