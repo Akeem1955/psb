@@ -66,7 +66,7 @@ public class CustomerInfoServices {
         if (customer.customerId != null && repo.existsById(customer.customerId)) {
             customer.markAsNotNew();
             repo.save(customer);
-            ResponseEntity.ok().body("Updated Succesfully...");
+            return ResponseEntity.ok().body("Updated Succesfully...");
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Customer Info Not found...");
     }
